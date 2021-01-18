@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/.env" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/Shorter/LinkController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/Shorter/LinkController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/Shorter/PageController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Requests/LinkRequest.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Models/Link.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Services/ToShortUrl.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Services/getFullLink.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/User.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/config/app.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2021_01_17_151706_create_links_table.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2021_01_17_182509_add_visits_column.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2021_01_17_210548_drop_ttl_collumn.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2021_01_17_233108_add_user_id_column.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/database/migrations/2021_01_17_233347_add_link_user_id_column.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/common/nav.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/base.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/base.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/links/created.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/author.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/author.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/links/links-created.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/links/links.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/links/links.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/web.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storage/framework/views/495085731efe0129dfeb2229a6dc8c8ed15bad71.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/storage/framework/views/58276b94224438852289e19ad262406b5e2afb1d.php" charset="UTF-8" />
+  </component>
+</project>
