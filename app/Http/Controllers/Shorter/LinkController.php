@@ -24,7 +24,7 @@ class LinkController extends Controller
 
             return view('pages.links.links',['links' => $links]);
         } catch (\Exception $e) {
-            return back()->with(['type' => 'error','message' => $e->getMessage()]);
+            return back()->withErrors($e->getMessage());
         }
 
     }
@@ -36,7 +36,7 @@ class LinkController extends Controller
 
             return view('index');
         } catch (\Exception $e) {
-            return back()->with(['type' => 'error','message' => $e->getMessage()]);
+            return back()->withErrors($e->getMessage());
         }
     }
 
@@ -56,7 +56,7 @@ class LinkController extends Controller
 
             return view('pages.links.links-created',['link' => $link]);
         } catch (\Exception $e) {
-            return back()->with(['type' => 'error','message' => $e->getMessage()]);
+            return back()->withErrors($e->getMessage());
         }
 
     }
@@ -65,11 +65,10 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Request $request
      * @param integer $id
      *
      */
-    public function destroy(Request $request, $id)
+    public function destroy(int $id)
     {
         try {
             $user = UserCodeFacade::getUserByCookie();
@@ -77,11 +76,11 @@ class LinkController extends Controller
             Link::where([
                 ['id',$id],
                 ['user_id', $user->id]
-            ])->limit(1)->delete();
+            ])->delete();
 
-            return back()->with(['type' => 'success','message' => 'Link was deleted']);
+            return back()->with('success','Link was deleted');
         } catch (\Exception $e){
-            return back()->with(['type' => 'error','message' => $e->getMessage()]);
+            return back()->withErrors($e->getMessage());
         }
     }
 }
