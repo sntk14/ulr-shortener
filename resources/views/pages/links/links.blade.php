@@ -16,7 +16,7 @@
         <tbody>
         @foreach($links as $link)
             <tr>
-                <th><a href="{{ $link->full_url }}">{{ substr($link->full_url,0,50) }}</a></th>
+                <th><a href="{{ $link->full_url }}">{{ substr($link->full_url,0,50).'...' }}</a></th>
                 <th><a href="{{ route('redirect',$link->short_url) }}">{{ $link->short_url }}</a></th>
                 <th>{{ $link->created_at }}</th>
                 <th>{{ $link->updated_at }}</th>

@@ -116,13 +116,14 @@
         </div>
     @endif
     <div class="content">
-        @isset($type)
-            <div class="alert
-                      {{ $type == 'success' ?? 'alert-success' }}
-                      {{ $type == 'error' ?? 'alert-danger' }}" role="alert">
-                {{ $message ?? '' }}
-            </div>
-        @endisset
+{{--        @isset($type)--}}
+{{--            <div class="alert--}}
+{{--                      {{ $type == 'success' ?? 'alert-success' }}--}}
+{{--                      {{ $type == 'error' ?? 'alert-danger' }}" role="alert">--}}
+{{--                {{ $message ?? '' }}--}}
+{{--            </div>--}}
+{{--        @endisset--}}
+        @include('common.alert')
         @yield('content')
     </div>
 </div>
