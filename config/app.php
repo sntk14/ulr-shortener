@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -175,6 +176,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\UserCodeProvider::class,
+        App\Providers\ToShortUrlProvider::class,
+
     ],
 
     /*
@@ -227,6 +231,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'UserCodeFacade' => App\Facades\UserCodeFacade::class,
+        'ToShortUrlFacade' => App\Facades\ToShortUrlFacade::class,
     ],
 
 ];

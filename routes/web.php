@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/link','Shorter\LinkController@index')->name('links.index');
-Route::post('/link','Shorter\LinkController@store')->name('links.create');
-Route::get('/link/{code?}','Shorter\PageController@index')->name('links.all');
+Route::get('/links','Shorter\LinkController@index')->name('links.index');
+Route::get('/link','Shorter\LinkController@create')->name('links.create');
+Route::post('/link','Shorter\LinkController@store')->name('links.store');
+Route::delete('/link/{id}','Shorter\LinkController@destroy')->name('links.delete');
 
 Route::get('/author','Shorter\PageController@aboutCreatorPage')->name('author');
 

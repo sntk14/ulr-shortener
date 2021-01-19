@@ -12,7 +12,7 @@ class PageController extends Controller
 
     public function index()
     {
-       return redirect(route('links.index'));
+       return redirect(route('links.create'));
     }
 
     public function aboutCreatorPage()
@@ -20,6 +20,7 @@ class PageController extends Controller
 
         return view('pages.author');
     }
+
     public function redirect(Request $request)
     {
         try {

@@ -1,6 +1,5 @@
 <div class="links">
-    <a href="{{ route('index') }}">Главная</a>
-    <a href="{{ route('links.all') }}">Все ссылки</a>
-    <a href="{{ route('links.all','1') }}">Мои ссылки</a>
-    <a href="{{ route('author') }}">О создателе</a>
+    <a href="{{ route('index') }}">Main</a>
+    <a href="{{ route('links.index') }}">My links</a>
+    <a href="{{ route('author') }}">Author</a>
 </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     @if($link)
-    <table class="table table-dark table-striped">
+    <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">Full URL</th>
@@ -13,10 +13,10 @@
         </thead>
         <tbody>
             <tr>
-                <th>{{ $link->full_url }}</th>
-                <th>{{ $link->short_url }}</th>
-                <th>{{ $link->create_at }}</th>
-                <th>{{ $link->delete_at }}</th>
+                <th><a href="{{ $link->full_url }}">{{ substr($link->full_url,0,50) }}</a></th>
+                <th><a href="{{ route('redirect',$link->short_url) }}">{{ $link->short_url }}</a></th>
+                <th>{{ $link->created_at }}</th>
+                <th>{{ $link->updated_at }}</th>
             </tr>
         </tbody>
     </table>
