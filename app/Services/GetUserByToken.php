@@ -19,7 +19,7 @@ class GetUserByToken
             $hashCode = Cookie::get($this->cookieKey);
         }
 
-        return User::where('code', $hashCode)->first();
+        return User::where('code', $hashCode)->limit(1)->first();
     }
 
     private function setUserKeyInCookie()

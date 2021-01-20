@@ -14,7 +14,8 @@ class LinkController extends Controller
     /**
      * @param Request $request
      *
-     */
+     * @return\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     **/
     public function index(Request $request)
     {
         try {
@@ -22,22 +23,19 @@ class LinkController extends Controller
 
             $links = Link::paginateLinks($user->id);
 
-            return view('pages.links.links',['links' => $links]);
+            return view('pages.links.links', ['links' => $links]);
         } catch (\Exception $e) {
-            return back()->withErrors($e->getMessage());
+            return view('index')->withErrors($e->getMessage());
         }
 
     }
 
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
-        try {
-
-            return view('index');
-        } catch (\Exception $e) {
-            return back()->withErrors($e->getMessage());
-        }
+        return view('index');
     }
 
 
@@ -45,6 +43,7 @@ class LinkController extends Controller
      * Store a newly created resource in storage.
      * @param LinkRequest $request
      *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function store(LinkRequest $request)
     {
@@ -52,9 +51,9 @@ class LinkController extends Controller
             $user = UserCodeFacade::getUserByCookie();
             $fullUrl = $request->full_url;
 
-            $link = Link::create($fullUrl,$user->id);
+            $link = Link::create($fullUrl, $user->id);
 
-            return view('pages.links.links-created',['link' => $link]);
+            return view('pages.links.links-created', ['link' => $link]);
         } catch (\Exception $e) {
             return back()->withErrors($e->getMessage());
         }
@@ -67,6 +66,7 @@ class LinkController extends Controller
      *
      * @param integer $id
      *
+     * return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function destroy(int $id)
     {
@@ -74,12 +74,12 @@ class LinkController extends Controller
             $user = UserCodeFacade::getUserByCookie();
 
             Link::where([
-                ['id',$id],
+                ['id', $id],
                 ['user_id', $user->id]
             ])->delete();
 
-            return back()->with('success','Link was deleted');
-        } catch (\Exception $e){
+            return back()->with('success', 'Link was deleted');
+        } catch (\Exception $e) {
             return back()->withErrors($e->getMessage());
         }
     }

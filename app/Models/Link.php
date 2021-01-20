@@ -29,7 +29,7 @@ class Link extends Model
         return $this->hasOne(User::class,'id','user_id');
     }
 
-    public function create($fullUrl,$userId)
+    public static function create($fullUrl,$userId)
     {
         $shortUrl = ToShortUrlFacade::toShort($fullUrl);
 
@@ -37,6 +37,7 @@ class Link extends Model
         $link->full_url = $fullUrl;
         $link->short_url = $shortUrl;
         $link->user_id = $userId;
+        $link->visits = 0;
         $save = $link->save();
 
         if(!$save) throw new \Exception('Link doesn\'t create!');
