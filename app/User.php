@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Link;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,5 +43,10 @@ class User extends Authenticatable
         $user->code = $code;
         $res = $user->save();
         if(!$res) throw new \Exception('Error of user creating');
+    }
+
+    public function links()
+    {
+        return $this->hasMany(Link::class, 'user_id', 'id');
     }
 }

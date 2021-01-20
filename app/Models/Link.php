@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Facades\ToShortUrlFacade;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,7 +24,12 @@ class Link extends Model
             ->paginate($linksOnPage);
     }
 
-    public static function create($fullUrl,$userId)
+    public function user()
+    {
+        return $this->hasOne(User::class,'id','user_id');
+    }
+
+    public function create($fullUrl,$userId)
     {
         $shortUrl = ToShortUrlFacade::toShort($fullUrl);
 
